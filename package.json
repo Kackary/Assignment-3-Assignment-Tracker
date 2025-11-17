@@ -1,0 +1,25 @@
+{
+  "name": "assignment-3-assignment-tracker",
+  "version": "1.0.0",
+  "description": "Assignment 3 - Assignment Tracker\r For Web & Script Programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kackary/Assignment-3-Assignment-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Kackary/Assignment-3-Assignment-Tracker/issues"
+  },
+  "homepage": "https://github.com/Kackary/Assignment-3-Assignment-Tracker#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "express": "^5.1.0"
+  }
+}
