@@ -12,20 +12,23 @@
         </tr>
 `;
 
-assignments.forEach(a => {
-    bodyContent += `
-        <tr>
-        <td>${a.title}</td>
-        <td>${a.course}</td>
-        <td>${a.dueDate}</td>
-        <td>${a.status}</td>
-        </tr>
-    `;
+assignments.forEach(a => {bodyContent += `
+    <tr>
+    <td>${a.title}</td>
+    <td>${a.course}</td>
+    <td>${a.dueDate}</td>
+    <td>${a.status}</td>
+    <td>
+        <a class="btn btn-warning btn-sm" href="/assignments/edit/${a._id}">Edit</a>
+        <a class="btn btn-danger btn-sm" href="/assignments/delete/${a._id}">Delete</a>
+    </td>
+    </tr>
+`;
 });
 
 bodyContent += `
         </table>
-    `;
+`;
 %>
 
 <%- include("layout", { body: bodyContent }) %>

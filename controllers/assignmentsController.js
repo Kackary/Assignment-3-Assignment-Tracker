@@ -23,12 +23,34 @@ exports.saveAssignment = async (req, res) => {
     }
 };
 
-exports.editAssignment = (req, res) => {
-    res.send("Edit assignment form will go here");
+exports.editAssignment = async(req, res) => {
+    try {
+        const assignment = await Assignment.findById(req.params.id);
+        res.render("edit", { assignment });
+    } catch (err) {
+        console.log(err);
+        res.send("Error finding assignment");
+    }
 };
 
-exports.deleteAssignment = (req, res) => {
-    res.send("Delete assignment will go here");
+exports.updateAssignment = async(req, res) => {
+    try {
+        await Assignment.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect('/assignments');
+    } catch (err) {
+        console.log(err);
+        res.send("Error updating assignment");
+    }
+};
+
+exports.deleteAssignment = async(req, res) => {
+    try {
+        await Assignment.findByIdAndDelete(req.params.id);
+        res.redirect('/assignments');
+    } catch (err) {
+        console.log(err);
+        res.send("Error deleting assignment");
+    }
 };
 
 module.exports=exports;
