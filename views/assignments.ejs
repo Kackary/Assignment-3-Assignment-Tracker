@@ -1,1 +1,31 @@
-<%- include("layout", { body: `<h1 class="text-center">Assignments</h1>` }) %>
+<% let bodyContent = `
+    <h2>Assignments</h2>
+
+    <a class="btn btn-primary mb-3" href="/assignments/add">Add Assignment</a>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Title</th>
+            <th>Course</th>
+            <th>Due date</th>
+            <th>Status</th>
+        </tr>
+`;
+
+assignments.forEach(a => {
+    bodyContent += `
+        <tr>
+        <td>${a.title}</td>
+        <td>${a.course}</td>
+        <td>${a.dueDate}</td>
+        <td>${a.status}</td>
+        </tr>
+    `;
+});
+
+bodyContent += `
+        </table>
+    `;
+%>
+
+<%- include("layout", { body: bodyContent }) %>

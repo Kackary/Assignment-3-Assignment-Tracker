@@ -9,6 +9,8 @@ connectDB();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
+app.use(express.urlencoded({extended:true}));
+
 const mainRoutes = require('./routes/main');
 app.use('/', mainRoutes);
 
