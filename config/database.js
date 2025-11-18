@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 function connectDB() {
-    console.log("Database file loaded");
+  mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("MongoDB connected"))
+    .catch(err => console.log(err));
 }
 
-module.exports=connectDB;
+module.exports = connectDB;
