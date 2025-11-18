@@ -5,7 +5,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.send("Site is working");
+  res.render("index");
 });
 
 app.listen(3000, () => {
