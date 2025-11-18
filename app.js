@@ -1,5 +1,8 @@
 const express = require('express');
+const connectDB = require('./config/database');
 const app = express();
+
+connectDB();
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
