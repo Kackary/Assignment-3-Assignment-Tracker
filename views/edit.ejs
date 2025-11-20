@@ -1,38 +1,39 @@
 <% let bodyContent = `
-<div class="container">
-    <h2>Edit Assignment</h2>
-    <form method="POST" action="/assignments/edit/${assignment._id}">
-        <input class="form-control mb-2" type="text" name="title" placeholder="Title" value="${assignment.title}" required>
-        <input class="form-control mb-2" type="text" name="course" placeholder="Course" value="${assignment.course}" required>
-        <input class="form-control mb-2" type="date" name="dueDate" value="${assignment.dueDate}" required>
-        <select class="form-control mb-2" name="status">
-`;
+    <div class="container">
+        <h2>Edit Assignment</h2>
+        <div class="card shadow-sm p-4">
+            <form method="POST" action="/assignments/edit/${assignment._id}" class="row g-3">
+                <input class="form-control mb-2" type="text" name="title" placeholder="Title" value="${assignment.title}" required>
+                <input class="form-control mb-2" type="text" name="course" placeholder="Course" value="${assignment.course}" required>
+                <input class="form-control mb-2" type="date" name="dueDate" value="${assignment.dueDate}" required>
+                <select class="form-control mb-2" name="status">
+    `;
 
-if (assignment.status === 'Not Started') {
-    bodyContent += `<option selected>Not Started</option>`;
-} else {
-    bodyContent += `<option>Not Started</option>`;
-}
+    if (assignment.status === 'Not Started') {
+        bodyContent += `<option selected>Not Started</option>`;
+    } else {
+        bodyContent += `<option>Not Started</option>`;
+    }
 
-if (assignment.status === 'In Progress') {
-    bodyContent += `<option selected>In Progress</option>`;
-} else {
-    bodyContent += `<option>In Progress</option>`;
-}
+    if (assignment.status === 'In Progress') {
+        bodyContent += `<option selected>In Progress</option>`;
+    } else {
+        bodyContent += `<option>In Progress</option>`;
+    }
 
-if (assignment.status === 'Done') {
-    bodyContent += `<option selected>Done</option>`;
-} else {
-    bodyContent += `<option>Done</option>`;
-}
+    if (assignment.status === 'Done') {
+        bodyContent += `<option selected>Done</option>`;
+    } else {
+        bodyContent += `<option>Done</option>`;
+    }
 
-bodyContent += `
-            </select>
-            <button class="btn btn-primary">Update Assignment</button>
-            <a href="/assignments" class="btn btn-dark">Cancel</a>
-        </form>
-    </div>
-`;
+    bodyContent += `
+                </select>
+                <button class="btn btn-primary">Update Assignment</button>
+                <a href="/assignments" class="btn btn-dark">Cancel</a>
+            </form>
+        </div>
+    `;
 %>
 
 <%- include("layout", { body: bodyContent }) %>
