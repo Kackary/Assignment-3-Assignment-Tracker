@@ -3,7 +3,7 @@
 A small web app for adding, editing, and deleting school assignments.  
 Built with Node.js, Express, MongoDB, and Mongoose.
 
-Live Demo on Render: 
+Live Demo on Render: https://assignment-3-assignment-tracker-vlbn.onrender.com/
 
 ## Features
 
@@ -18,7 +18,7 @@ Live Demo on Render:
 1. Clone the Repo: `git clone https://github.com/Kackary/Assignment-3-Assignment-Tracker`
 2. Navigate to the directory: `cd Assignment-3-Assignment-Tracker`
 3. Install dependencies: `npm install`
-4. Start server: `npm start`
+4. Start server: `node app.js`
 5. Open browser at `http://localhost:3000`
 
 ## Folder Structure
